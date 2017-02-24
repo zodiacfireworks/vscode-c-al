@@ -1,0 +1,32 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "C/AL",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.c-al",
+				"match": "\\b(IF|THEN|BEGIN|END|WHILE|FOR|RETURN)\\b"
+			}]
+		},
+		"strings": {
+			"name": "string.quoted.single.c-al",
+			"begin": "'",
+			"end": "'",
+			"patterns": [
+				{
+					"name": "constant.character.escape.c-al",
+					"match": "\\\\."
+				}
+			]
+		}
+	},
+	"scopeName": "source.cal"
+}

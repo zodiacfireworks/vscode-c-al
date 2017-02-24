@@ -1,0 +1,26 @@
+{
+    "name": "c-al",
+    "displayName": "C/AL",
+    "description": "Dynamics NAV C/AL programming language Syntax higlight",
+    "version": "0.0.1",
+    "publisher": "zodiacfireworks",
+    "engines": {
+        "vscode": "^1.5.0"
+    },
+    "categories": [
+        "Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "c-al",
+            "aliases": ["C/AL", "c-al"],
+            "extensions": [".cal",".nav"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "c-al",
+            "scopeName": "source.cal",
+            "path": "./syntaxes/c-al.tmLanguage.json"
+        }]
+    }
+}

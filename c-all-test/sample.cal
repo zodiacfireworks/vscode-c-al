@@ -1,0 +1,7 @@
+IF Item.GET('31260210') THEN BEGIN
+    MESSAGE(STRSUBSTNO('Item name is: %1',Item.Description));
+END
+
+Item.RESET;
+Item.SETRANGE("No.",FromItem,ToItem);
+Item.FINDLAST;
