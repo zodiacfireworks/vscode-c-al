@@ -1,26 +1,50 @@
 {
     "name": "c-al",
     "displayName": "C/AL",
-    "description": "Dynamics NAV C/AL programming language Syntax higlight",
-    "version": "0.0.1",
+    "description": "Dynamics NAV C/AL programming language support for VSCode",
+    "keywords": [
+        "Dynamics NAV",
+        "C/AL",
+        "syntax"
+    ],
+    "version": "0.0.2",
     "publisher": "zodiacfireworks",
+    "license": "MIT",
     "engines": {
         "vscode": "^1.5.0"
     },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/zodiacfireworks/dynamics-nav-on-vscode"
+    },
+    "bugs": {
+        "url": "https://github.com/zodiacfireworks/dynamics-nav-on-vscode/issues"
+    },
+    "homepage": "https://github.com/zodiacfireworks/dynamics-nav-on-vscode",
     "categories": [
         "Languages"
     ],
     "contributes": {
-        "languages": [{
-            "id": "c-al",
-            "aliases": ["C/AL", "c-al"],
-            "extensions": [".cal",".nav"],
-            "configuration": "./language-configuration.json"
-        }],
-        "grammars": [{
-            "language": "c-al",
-            "scopeName": "source.cal",
-            "path": "./syntaxes/c-al.tmLanguage.json"
-        }]
+        "languages": [
+            {
+                "id": "c-al",
+                "aliases": [
+                    "C/AL",
+                    "c-al"
+                ],
+                "extensions": [
+                    ".cal",
+                    ".nav"
+                ],
+                "configuration": "./c-al.configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "c-al",
+                "scopeName": "source.cal",
+                "path": "./syntaxes/c-al.tmLanguage.json"
+            }
+        ]
     }
 }
