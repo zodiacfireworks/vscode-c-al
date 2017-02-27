@@ -1,6 +1,12 @@
 {
 	"comment": "VSCode Syntax Parser for Dynamics NAV C/AL Programming Language",
+	"fileTypes": [
+		"cal",
+		"c-al"
+	],
 	"name": "C/AL",
+	"foldingStartMarker": "(IF|THEN|ELSE|BEGIN|REPEAT|\\{)",
+	"foldingStopMarker": "(END\\b|\\})",
 	"patterns": [
 		{
 			"include": "#keywords"
@@ -13,7 +19,47 @@
 		"keywords": {
 			"patterns": [{
 				"name": "keyword.control.c-al",
-				"match": "\\b(IF|THEN|BEGIN|END|WHILE|FOR|RETURN)\\b"
+				"match": "\\b(BEGIN|END)\\b"
+			},
+			{
+				"name": "keyword.control.c-al",
+				"match": "\\b(IF|THEN|ELSE)\\b"
+			},
+			{
+				"name": "keyword.control.c-al",
+				"match": "\\b(CASE|OF|ELSE|END)\\b"
+			},
+			{
+				"name": "keyword.control.c-al",
+				"match": "\\b(WHILE|DO)\\b"
+			},
+			{
+				"name": "keyword.control.c-al",
+				"match": "\\b(REPEAT|UNTIL)\\b"
+			},
+			{
+				"name": "keyword.control.c-al",
+				"match": "\\b(FOR|TO|DO)\\b"
+			},
+			{
+				"name": "keyword.control.c-al",
+				"match": "\\b(FOR|DOWNTO|DO)\\b"
+			},
+			{
+				"name": "keyword.control.c-al",
+				"match": "\\b(FOREACH|IN|DO)\\b"
+			},
+			{
+				"name": "keyword.control.c-al",
+				"match": "\\b(WITH|DO|END)\\b"
+			},
+			{
+				"name": "keyword.control.c-al",
+				"match": "\\bEXIT\\b"
+			},
+			{
+				"name": "keyword.control.c-al",
+				"match": "\\bBREAK\\b"
 			}]
 		},
 		"strings": {

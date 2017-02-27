@@ -1,7 +1,107 @@
-IF Item.GET('31260210') THEN BEGIN
-    MESSAGE(STRSUBSTNO('Item name is: %1',Item.Description));
+// Compound Statments
+// ------------------
+// BEGIN-END
+IF (x = y) AND (a = b) THEN BEGIN
+  x := a;
+  y := b;
+END;
+
+
+
+// Conditional Statments
+// ---------------------
+// IF-THEN-ELSE
+IF x < y THEN
+  EXIT(TRUE)
+ELSE BEGIN
+  x := x * 2;
+  y := y - 1;
+END;
+
+
+// CASE-OF
+CASE Field OF
+  Field::A:
+    BEGIN
+     x := x + 1;
+     y := -y - 1;
+    END;
+  Field::B:
+    x := y;
+  Field::C,Field::D:
+    y := x;
+  ELSE BEGIN
+    y := x;
+    a := b;
+  END;
 END
 
-Item.RESET;
-Item.SETRANGE("No.",FromItem,ToItem);
-Item.FINDLAST;
+
+
+// Repetitive Statements
+// ---------------------
+// FOR-TO-DO
+FOR I := 1 TO 5 DO
+  FOR J := 1 TO 7 DO
+    A[I,J] := 23;
+
+
+// FOR-DOWNTO-DO
+FOR I := 5 DOWNTO 1 DO
+  FOR J := 7 DOWNTO 1 DO
+    A[I,J] := 23;
+
+
+// FOREACH-IN-DO
+strarray := Dir.GetFileSystemEntries('C:\\myfiles\\');
+FOREACH txt IN strarray DO
+  BEGIN
+    MESSAGE(txt);
+  END;
+
+
+// WHILE-DO
+WHILE I < 1000 DO
+  I := I + 1;
+Message(format(I));
+
+
+// REPEAT-UNTIL
+Count := 0;
+IF Customer.FIND('-') THEN
+  REPEAT
+    Count := Count + 1;
+  UNTIL Customer.NEXT <= 0;
+Message(’The Customer table contains %1 records.’,Count);
+
+
+// EXIT
+FOR I := 1 TO 1000 DO BEGIN
+  IF Amount[I] < Total[I] THEN
+    EXIT(1);
+  A[I] := Amount[I] + Total[I];
+END;
+
+
+// BREAK Statement
+// ---------------
+// BREAK
+FOREACH element IN mylist DO
+  BEGIN
+    MESSAGE(FORMAT(element));
+    IF FORMAT(element) = 'Item 2' THEN
+      BREAK;
+  END;
+
+
+// WITH Statment
+// -------------
+// WITH
+WITH CustomerRec DO BEGIN
+  "No." := '1234';
+  Name := 'Windy City Solutions';
+  "Phone No." := '555-444-333';
+  Address := '1241 Druid Avenue';
+  City := 'Windy City';
+  MESSAGE('A variable has been created for this customer.');
+END;
