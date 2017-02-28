@@ -105,3 +105,12 @@ WITH CustomerRec DO BEGIN
   City := 'Windy City';
   MESSAGE('A variable has been created for this customer.');
 END;
+
+// ASSERTERROR Statement
+// ---------------------
+// ASSERTERROR
+InvalidDate := 010184D;
+InvalidDateErrorMessage := Text001;
+ASSERTERROR CheckDate(InvalidDate);
+IF GETLASTERRORTEXT <> InvalidDateErrorMessage THEN
+  ERROR('Unexpected error: %1', GETLASTERRORTEXT);

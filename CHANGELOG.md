@@ -1,7 +1,11 @@
 # Change Log
-All notable changes to the "c-al" extension will be documented in this file.
+## 0.0.3
+- Complete list of control statments keyworks for C/AL in Dynamics NAV 2016
+- Sample codes to test syntaxhigligth
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
+## 0.0.2
+- Update package.json
+- Added github repository
 
-## [Unreleased]
-- Initial release
+## 0.0.1
+- Nothing, I only starts this package

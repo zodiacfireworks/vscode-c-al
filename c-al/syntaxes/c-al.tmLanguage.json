@@ -9,60 +9,53 @@
 	"foldingStopMarker": "(END\\b|\\})",
 	"patterns": [
 		{
+			"name": "keyword.control.c-al",
 			"include": "#keywords"
 		},
 		{
+			"name": "keyword.operator.c-al",
+			"include": "#operators"
+		},
+		{
 			"include": "#strings"
+		},
+		{
+			"include": "#comments"
 		}
 	],
 	"repository": {
 		"keywords": {
 			"patterns": [{
 				"name": "keyword.control.c-al",
-				"match": "\\b(BEGIN|END)\\b"
+				"match": "\\b(AssertError|Begin|Case|Do|DownTo|Else|End|Event|Exit|False|For|ForEach|If|Local|Of|Repeat|Then|To|True|Until|Var|While|With)\\b"
 			},
 			{
 				"name": "keyword.control.c-al",
-				"match": "\\b(IF|THEN|ELSE)\\b"
+				"match": "\\b(ASSERTERROR|BEGIN|CASE|DO|DOWNTO|ELSE|END|EVENT|EXIT|FALSE|FOR|FOREACH|IF|LOCAL|OF|REPEAT|THEN|TO|TRUE|UNTIL|VAR|WHILE|WITH)\\b"
+			}]
+		},
+		"operators": {
+			"patterns": [{
+				"name": "keyword.operator.c-al",
+				"match": "\\b(And|Div|In|Mod|Not|Or|XOR)\\b"
 			},
 			{
-				"name": "keyword.control.c-al",
-				"match": "\\b(CASE|OF|ELSE|END)\\b"
-			},
-			{
-				"name": "keyword.control.c-al",
-				"match": "\\b(WHILE|DO)\\b"
-			},
-			{
-				"name": "keyword.control.c-al",
-				"match": "\\b(REPEAT|UNTIL)\\b"
-			},
-			{
-				"name": "keyword.control.c-al",
-				"match": "\\b(FOR|TO|DO)\\b"
-			},
-			{
-				"name": "keyword.control.c-al",
-				"match": "\\b(FOR|DOWNTO|DO)\\b"
-			},
-			{
-				"name": "keyword.control.c-al",
-				"match": "\\b(FOREACH|IN|DO)\\b"
-			},
-			{
-				"name": "keyword.control.c-al",
-				"match": "\\b(WITH|DO|END)\\b"
-			},
-			{
-				"name": "keyword.control.c-al",
-				"match": "\\bEXIT\\b"
-			},
-			{
-				"name": "keyword.control.c-al",
-				"match": "\\bBREAK\\b"
+				"name": "keyword.operator.c-al",
+				"match": "\\b(AND|DIV|IN|MOD|NOT|OR|XOR)\\b"
 			}]
 		},
 		"strings": {
+			"name": "string.quoted.single.c-al",
+			"begin": "'",
+			"end": "'",
+			"patterns": [
+				{
+					"name": "constant.character.escape.c-al",
+					"match": "\\\\."
+				}
+			]
+		},
+		"comments": {
 			"name": "string.quoted.single.c-al",
 			"begin": "'",
 			"end": "'",
