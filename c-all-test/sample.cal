@@ -63,6 +63,10 @@ FOREACH txt IN strarray DO
 // WHILE-DO
 WHILE I < 1000 DO
   I := I + 1;
+
+
+
+
 Message(format(I));
 
 

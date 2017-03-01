@@ -1,71 +1,78 @@
 {
-	"comment": "VSCode Syntax Parser for Dynamics NAV C/AL Programming Language",
-	"fileTypes": [
-		"cal",
-		"c-al"
-	],
-	"name": "C/AL",
-	"foldingStartMarker": "(IF|THEN|ELSE|BEGIN|REPEAT|\\{)",
-	"foldingStopMarker": "(END\\b|\\})",
-	"patterns": [
-		{
-			"name": "keyword.control.c-al",
-			"include": "#keywords"
+    "comment": "VSCode Syntax Parser for Dynamics NAV C/AL Programming Language",
+    "fileTypes": [
+        "cal",
+        "c-al"
+    ],
+    "name": "C/AL",
+    "foldingStartMarker": "(IF|THEN|ELSE|BEGIN|REPEAT|FOR|FOREACH|WITH|DO|CASE|\\{|\\(|\\s*$",
+    "foldingStopMarker": "^\\s*((\\}|\\)|ELSE|UNTIL\\s*\\.*)\\s*$|END\\b|\\n)",
+    "patterns": [{
+		"begin": "(^[ \\t]+)?(?=//)",
+		"beginCaptures": {
+			"1": {
+				"name": "punctuation.whitespace.comment.leading.c-al"
+			}
 		},
-		{
-			"name": "keyword.operator.c-al",
-			"include": "#operators"
-		},
-		{
-			"include": "#strings"
-		},
-		{
-			"include": "#comments"
-		}
-	],
-	"repository": {
-		"keywords": {
-			"patterns": [{
-				"name": "keyword.control.c-al",
-				"match": "\\b(AssertError|Begin|Case|Do|DownTo|Else|End|Event|Exit|False|For|ForEach|If|Local|Of|Repeat|Then|To|True|Until|Var|While|With)\\b"
-			},
-			{
-				"name": "keyword.control.c-al",
-				"match": "\\b(ASSERTERROR|BEGIN|CASE|DO|DOWNTO|ELSE|END|EVENT|EXIT|FALSE|FOR|FOREACH|IF|LOCAL|OF|REPEAT|THEN|TO|TRUE|UNTIL|VAR|WHILE|WITH)\\b"
-			}]
-		},
-		"operators": {
-			"patterns": [{
-				"name": "keyword.operator.c-al",
-				"match": "\\b(And|Div|In|Mod|Not|Or|XOR)\\b"
-			},
-			{
-				"name": "keyword.operator.c-al",
-				"match": "\\b(AND|DIV|IN|MOD|NOT|OR|XOR)\\b"
-			}]
-		},
-		"strings": {
-			"name": "string.quoted.single.c-al",
-			"begin": "'",
-			"end": "'",
-			"patterns": [
-				{
-					"name": "constant.character.escape.c-al",
-					"match": "\\\\."
+		"end": "(?!\\G)",
+		"patterns": [{
+			"begin": "//",
+			"beginCaptures": {
+				"1": {
+					"name": "punctuation.definition.comment.c-al"
 				}
-			]
-		},
-		"comments": {
-			"name": "string.quoted.single.c-al",
-			"begin": "'",
-			"end": "'",
-			"patterns": [
-				{
-					"name": "constant.character.escape.c-al",
-					"match": "\\\\."
-				}
-			]
-		}
-	},
-	"scopeName": "source.cal"
+			},
+			"end": "\\n",
+			"name": "comment.line.c-all"
+		}]
+	}, {
+        "name": "keyword.control.c-al",
+        "include": "#keywords"
+    }, {
+        "name": "keyword.operator.c-al",
+        "include": "#operators"
+    }, {
+        "include": "#strings"
+    }, {
+        "include": "#comments"
+    }],
+    "repository": {
+        "keywords": {
+            "patterns": [{
+                "name": "keyword.control.c-al",
+                "match": "\\b(AssertError|Begin|Case|Do|DownTo|Else|End|Event|Exit|False|For|ForEach|If|Local|Of|Repeat|Then|To|True|Until|Var|While|With)\\b"
+            }, {
+                "name": "keyword.control.c-al",
+                "match": "\\b(ASSERTERROR|BEGIN|CASE|DO|DOWNTO|ELSE|END|EVENT|EXIT|FALSE|FOR|FOREACH|IF|LOCAL|OF|REPEAT|THEN|TO|TRUE|UNTIL|VAR|WHILE|WITH)\\b"
+            }]
+        },
+        "operators": {
+            "patterns": [{
+                "name": "keyword.operator.c-al",
+                "match": "\\b(And|Div|In|Mod|Not|Or|XOR)\\b"
+            }, {
+                "name": "keyword.operator.c-al",
+                "match": "\\b(AND|DIV|IN|MOD|NOT|OR|XOR)\\b"
+            }]
+        },
+        "strings": {
+            "name": "string.quoted.single.c-al",
+            "begin": "'",
+            "end": "'",
+            "patterns": [{
+                "name": "constant.character.escape.c-al",
+                "match": "\\\\."
+            }]
+        },
+        "comments": {
+            "name": "string.quoted.single.c-al",
+            "begin": "'",
+            "end": "'",
+            "patterns": [{
+                "name": "constant.character.escape.c-al",
+                "match": "\\\\."
+            }]
+        }
+    },
+    "scopeName": "source.cal"
 }
