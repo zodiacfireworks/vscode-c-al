@@ -1,4 +1,7 @@
 # Change Log
+## 0.0.4
+- Catch single lines commnets with double slash (//)
+
 ## 0.0.3
 - Complete list of control statments keyworks for C/AL in Dynamics NAV 2016
 - Sample codes to test syntaxhigligth
