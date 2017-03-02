@@ -1,5 +1,8 @@
 # Change Log
 
+## 0.0.8
+- Added support for language variables
+
 ## 0.0.7
 - Added icon and theme for vs code marketplace
 

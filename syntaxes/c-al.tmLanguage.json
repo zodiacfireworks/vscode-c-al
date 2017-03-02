@@ -59,15 +59,15 @@
         "match": "\\:\\=",
         "name": "keyword.operator.assignment.c-al"
     }, {
-        "include": "#strings"
-    }, {
-        "include": "#language_variables"
-    }, {
         "begin": "(\\()",
         "end": "(\\))",
         "patterns": [{
             "include": "$self"
         }]
+    }, {
+        "include": "#strings"
+    }, {
+        "include": "#language_variables"
     }],
     "repository": {
         "builtin_datatypes": {
