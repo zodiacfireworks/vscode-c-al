@@ -50,11 +50,11 @@
         "name": "keyword.other.c-al",
         "match": "\\b(DIV|MOD)\\b"
     }, {
+        "match": "<|>|<>|\\=|<\\=|>\\=",
+        "name": "keyword.operator.comparison.c-al"
+    }, {
         "match": "\\+|\\-|\\*|/",
         "name": "keyword.operator.arithmetic.c-al"
-    }, {
-        "match": "\\+\\=|-\\=|\\*\\=|/\\=",
-        "name": "keyword.operator.assignment.augmented.python"
     }, {
         "match": "\\:\\=",
         "name": "keyword.operator.assignment.c-al"

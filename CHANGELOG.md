@@ -1,5 +1,8 @@
 # Change Log
 
+## 0.0.9
+- Corrections in support for operators
+
 ## 0.0.8
 - Added support for language variables
 
