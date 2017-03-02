@@ -8,53 +8,80 @@
     "foldingStartMarker": "(IF|THEN|ELSE|BEGIN|REPEAT|FOR|FOREACH|WITH|DO|CASE|\\{|\\(|\\s*$",
     "foldingStopMarker": "^\\s*((\\}|\\)|ELSE|UNTIL\\s*\\.*)\\s*$|END\\b|\\n)",
     "patterns": [{
-		"begin": "(^[ \\t]+)?(?=//)",
-		"beginCaptures": {
-			"1": {
-				"name": "punctuation.whitespace.comment.leading.c-al"
-			}
-		},
-		"end": "(?!\\G)",
-		"patterns": [{
-			"begin": "//",
-			"beginCaptures": {
-				"1": {
-					"name": "punctuation.definition.comment.c-al"
-				}
-			},
-			"end": "\\n",
-			"name": "comment.line.c-all"
-		}]
-	}, {
-        "name": "keyword.control.c-al",
-        "include": "#keywords"
+        "begin": "(^[ \\t]+)?(?=//)",
+        "beginCaptures": {
+            "1": {
+                "name": "punctuation.whitespace.comment.leading.c-al"
+            }
+        },
+        "end": "(?!\\G)",
+        "patterns": [{
+            "begin": "//",
+            "beginCaptures": {
+                "1": {
+                    "name": "punctuation.definition.comment.c-al"
+                }
+            },
+            "end": "\\n",
+            "name": "comment.line.c-all"
+        }]
     }, {
-        "name": "keyword.operator.c-al",
-        "include": "#operators"
+        "comment": "Datetime data type",
+		"name": "constant.numeric.complex.c-al",
+		"match": "\\b(?i:([1-9]+[0-9]*|0)D)"
+    }, {
+		"comment": "Decimal data type",
+        "name": "constant.numeric.float.c-al",
+        "match": "\\b(?i:(\\d+\\.\\d*))(?=[^a-zA-Z_])"
+    }, {
+        "comment": "Integer data type",
+		"name": "constant.numeric.integer.decimal.c-al",
+		"match": "\\b([1-9]+[0-9]*|0)"
+    }, {
+        "comment": "BigInteger data type",
+        "name": "constant.numeric.integer.big.decimal.c-al",
+        "match": "\\b(?i:([1-9]+[0-9]*|0)L)"
+    }, {
+		"comment": "keywords that delimit flow blocks or alter flow from within a block",
+        "name": "keyword.control.flow.c-al",
+        "match": "\\b(AssertError|Begin|Case|Do|DownTo|Else|End|Event|Exit|False|For|ForEach|If|Local|Of|Repeat|Then|To|True|Until|Var|While|With|ASSERTERROR|BEGIN|CASE|DO|DOWNTO|ELSE|END|EVENT|EXIT|FALSE|FOR|FOREACH|IF|LOCAL|OF|REPEAT|THEN|TO|TRUE|UNTIL|VAR|WHILE|WITH)\\b"
+    }, {
+		"comment": "keyword operators that evaluate to True or False",
+        // Transitory comment to gave colorut to this words
+        // "name": "keyword.operator.logical.c-al",
+        "name": "keyword.operator.other.c-al",
+        "match": "\\b(AND|IN|NOT|OR|XOR)\\b"
+    }, {
+        "comment": "keywords that haven't fit into other groups (yet).",
+        "name": "keyword.other.c-al",
+        "match": "\\b(DIV|MOD)\\b"
+    }, {
+        "match": "\\+|\\-|\\*|/",
+        "name": "keyword.operator.arithmetic.c-al"
+    }, {
+        "match": "\\+\\=|-\\=|\\*\\=|/\\=",
+        "name": "keyword.operator.assignment.augmented.python"
+    }, {
+        "match": "\\:\\=",
+        "name": "keyword.operator.assignment.c-al"
     }, {
         "include": "#strings"
     }, {
-        "include": "#comments"
+        "begin": "(\\()",
+        "end": "(\\))",
+        "patterns": [{
+            "include": "$self"
+        }]
     }],
     "repository": {
-        "keywords": {
-            "patterns": [{
-                "name": "keyword.control.c-al",
-                "match": "\\b(AssertError|Begin|Case|Do|DownTo|Else|End|Event|Exit|False|For|ForEach|If|Local|Of|Repeat|Then|To|True|Until|Var|While|With)\\b"
-            }, {
-                "name": "keyword.control.c-al",
-                "match": "\\b(ASSERTERROR|BEGIN|CASE|DO|DOWNTO|ELSE|END|EVENT|EXIT|FALSE|FOR|FOREACH|IF|LOCAL|OF|REPEAT|THEN|TO|TRUE|UNTIL|VAR|WHILE|WITH)\\b"
-            }]
-        },
-        "operators": {
-            "patterns": [{
-                "name": "keyword.operator.c-al",
-                "match": "\\b(And|Div|In|Mod|Not|Or|XOR)\\b"
-            }, {
-                "name": "keyword.operator.c-al",
-                "match": "\\b(AND|DIV|IN|MOD|NOT|OR|XOR)\\b"
-            }]
-        },
+		"builtin_datatypes": {
+			"name": "support.type.c-al",
+			"match": "\b(Action|Automation|BigInteger|BigText|Binary|BLOB|Boolean|Char|Code|Codeunit|Date|DateFormula|DateTime|Decimal|Dialog|Duration|FieldRef|File|GUID|InStream|Integer|KeyRef|OCX|Option|OutStream|Page|Record|RecordID|RecordRef|Report|System|TableFilter|Text|Time|TransactionType|Variant|XMLport)\b"
+		},
+		"builtin_functions": {
+			"name": "support.function.builtin.c-al",
+			"match": "\b(Abs|Activate|Active|Addlink|Addtext|Applicationpath|ArrayLen|Ascending|Beep|Break|CalcDate|CalcField|CalcFields|CalcSum|CalcSums|Caption|ChangeCompany|CheckLicenseFile|Class|Clear|ClearAll|ClearLastError|ClearMarks|ClientType|Close|ClosingDate|CodeCoverageLog|CommandLine|Commit|CompanyName|CompressArray|Confirm|Consistent|ContextURL|ConvertStr|Copy|CopyArray|CopyFilter|CopyFilters|CopyLinks|CopyStr|CopyStream|Count|CountApprox|Create|CreateDateTime|CreateGUID|CreateInstream|CreateOutstream|CreateTempFile|CurrentClientType|CurrentDateTime|CurrentExecutionMode|CurrentKey|CurrentKeyIndex|CurrentTransactionType|Database|Date2DMY|Date2DWY|DaTi2Variant|Debugger|DecimalPlacesMax|DecimalPlacesMin|DefaultClientType|DelChr|Delete|DeleteAll|DeleteLink|DeleteLinks|DelStr|DMY2Date|Download|DownloadFromStream|DT2Date|DT2Time|Duplicate|DWY2Date|Editable|Enabled|Environ|EOS|Erase|Error|Evaluate|Exists|Export|ExportObjects|Field|FieldActive|FieldCaption|FieldCount|FieldError|FieldExist|FieldIndex|FieldName|FieldNo|FileName|FilterGroup|Find|FindFirst|FindLast|FindSet|Format|Get|GetFilter|GetFilters|GetLastErrorText|GetPosition|GetRangeMax|GetRangeMin|GetRecord|GetStamp|GetSubtext|GetTable|GetURL|GetView|GlobalLanguage|GUIAllowed|HasFilter|HasLinks|HasValue|Height|Hyperlink|Import|ImportObjects|IncStr|Init|InlineEditing|Input|Insert|InsStr|IsAction|IsAutomation|IsBinary|IsBoolean|IsChar|IsClear|IsCode|IsCodeunit|IsDate|IsDateFormula|IsDecimal|IsEmpty|IsFile|IsInstream|IsInteger|IsNullGUID|IsOption|IsOutstream|IsRecord|IsText|IsTime|IsTransactionType|KeyCount|KeyGroupDisable|KeyGroupEnable|KeyGroupEnabled|KeyIndex|Language|Len|Length|LockTable|LockTimeout|LogHeight|LogWidth|LookupMode|Lowercase|Mark|MarkedOnly|MaximizedOnOpen|MaxStrLen|Message|MinimizedOnOpen|Modify|ModifyAll|Name|Next|NormalDate|Number|ObjectType|Open|OptionCaption|OptionString|OSVersion|PadStr|PAGENO|PAPERSOURCE|Pos|Power|Preview|PrintOnlyIfDetail|QueryReplace|Quit|Random|Randomize|Read|ReadConsistency|ReadPermission|ReadText|RecordID|RecordLevelLocking|Relation|Rename|Reset|Round|RoundDateTime|Run|RunModal|SaveAsExcel|SaveAsHTML|SaveAsPDF|SaveAsXML|SaveRecord|Seek|SelectLatestVersion|SelectStr|SerialNumber|SetAutoCalcFields|SetCurrentKey|SetFilter|SetPermissionFilter|SetPosition|SetRange|SetRecFilter|SetRecord|SetSelectionFilter|SetStamp|SetTable|SetTableView|SetView|Shell|SID|Skip|Sleep|STARTSESSION|STOPSESSION|StrCheckSum|StrLen|StrMenu|StrPos|StrSubstNo|SynchronizeAllLogins|SynchronizeSingleLogin|TableCaption|TableName|TableNo|TemporaryPath|TestField|TextEncoding|TextMode|TextPos|Today|TOTALSCAUSEDBY|TransferFields|Trunc|Type|Update|UpdateControls|UpdateEditable|UpdateFontBold|UpdateForeColor|UpdateIndent|UpdateSelected|Upload|UploadIntoStream|Uppercase|UserID|Validate|Value|VariableActive|Variant2Date|Variant2Time|Visible|Width|WindowsLanguage|WordDate|Write|WriteMode|WritePermission|WriteText|XPos|Yield|YPos|Array)\b"
+		},
         "strings": {
             "name": "string.quoted.single.c-al",
             "begin": "'",
@@ -64,14 +91,12 @@
                 "match": "\\\\."
             }]
         },
-        "comments": {
-            "name": "string.quoted.single.c-al",
-            "begin": "'",
-            "end": "'",
-            "patterns": [{
-                "name": "constant.character.escape.c-al",
-                "match": "\\\\."
-            }]
+        "generic_names": {
+            "match": "[A-Za-z_][A-Za-z0-9_]*"
+        },
+        "language_variables": {
+            "match": "\\b(Rec|xRec)\\b",
+            "name": "variable.language.c-al"
         }
     },
     "scopeName": "source.cal"
