@@ -88,9 +88,7 @@ All resources developed by me in this repository is released under the MIT licen
 
 Resource with its respective licences are protectect by them.
 
-If you find copyright protected content or without its respective credits,
-please let us know to give the respective credits and to put the things in
-order according to laws.
+If you find copyright protected content or without it respective credits, please let us know to give the respective credits and to put the things in order according to laws.
 
 
 [1]: git@github.com:zodiacfireworks/vscode-c-al.git
