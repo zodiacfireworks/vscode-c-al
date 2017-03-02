@@ -1,14 +1,15 @@
 {
-    "name": "c-al",
-    "displayName": "C/AL",
-    "description": "Dynamics NAV C/AL programming language support for VSCode",
+    "name": "vscode-c-al",
+    "displayName": "Dynamics NAV C/AL",
+    "description": "Dynamics NAV C/AL programming language support for Visual Studio Code",
+    "version": "0.0.7",
+    "publisher": "zodiacfireworks",
     "keywords": [
+        "Microsoft Dynamics",
         "Dynamics NAV",
         "C/AL",
         "syntax"
     ],
-    "version": "0.0.7",
-    "publisher": "zodiacfireworks",
     "license": "MIT",
     "icon": "images/icon.png",
     "galleryBanner": {
@@ -20,36 +21,33 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/zodiacfireworks/dynamics-nav-on-vscode"
+        "url": "https://github.com/zodiacfireworks/vscode-c-al"
     },
     "bugs": {
-        "url": "https://github.com/zodiacfireworks/dynamics-nav-on-vscode/issues"
+        "url": "https://github.com/zodiacfireworks/vscode-c-al/issues"
     },
-    "homepage": "https://github.com/zodiacfireworks/dynamics-nav-on-vscode",
+    "homepage": "https://github.com/zodiacfireworks/vscode-c-al",
     "categories": [
         "Languages"
     ],
     "contributes": {
-        "languages": [
-            {
-                "id": "c-al",
-                "aliases": [
-                    "C/AL",
-                    "c-al"
-                ],
-                "extensions": [
-                    ".cal",
-                    ".nav"
-                ],
-                "configuration": "./c-al.configuration.json"
-            }
-        ],
-        "grammars": [
-            {
-                "language": "c-al",
-                "scopeName": "source.cal",
-                "path": "./syntaxes/c-al.tmLanguage.json"
-            }
-        ]
+        "languages": [{
+            "id": "c-al",
+            "aliases": [
+                "C/AL",
+                "c-al"
+            ],
+            "extensions": [
+                ".cal",
+                ".c-al",
+                ".nav"
+            ],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "c-al",
+            "scopeName": "source.c-al",
+            "path": "./syntaxes/c-al.tmLanguage.json"
+        }]
     }
 }

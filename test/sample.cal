@@ -5,8 +5,8 @@ BigIntegerVar := BigIntegerVar - 1;
 Date1 := 0D;
 Date1 := 112710D;
 MESSAGE(FORMAT(Date1));
-Date1 := 11271810D;
 MESSAGE(FORMAT(Date1));
+Date1 := 11271810D;
 Q = DIV(5, 7);
 R = MOD(5, 7);
 
