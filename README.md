@@ -2,8 +2,6 @@
 
 This plugin is intended to make development for Microsoft Dynamics NAV easier, away from it's ugly and non productive development environment. (Okay it's only my opinion)
 
-You can download this extension from [vscode marketplace](https://marketplace.visualstudio.com/items?itemName=zodiacfireworks.c-al) 100% free :octocat:
-
 ## Features
 
 The first feature that I'm developing is the syntaxhighlight. some other features are planned but are very tangled in my mind. I will put a TODO list for all those features.

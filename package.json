@@ -7,9 +7,14 @@
         "C/AL",
         "syntax"
     ],
-    "version": "0.0.5",
+    "version": "0.0.7",
     "publisher": "zodiacfireworks",
     "license": "MIT",
+    "icon": "images/icon.png",
+    "galleryBanner": {
+        "color": "#00204f",
+        "theme": "dark"
+    },
     "engines": {
         "vscode": "^1.5.0"
     },
