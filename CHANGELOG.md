@@ -1,5 +1,8 @@
 # Change Log
 
+## 0.0.7
+- Added icon and theme for vs code marketplace
+
 ## 0.0.6
 - Added support for BigIntegers, integers, decimal and datetime type
 - Added builtin functions and data types
