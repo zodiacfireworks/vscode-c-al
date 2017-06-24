@@ -85,11 +85,7 @@
         "strings": {
             "name": "string.quoted.single.c-al",
             "begin": "'",
-            "end": "'",
-            "patterns": [{
-                "name": "constant.character.escape.c-al",
-                "match": "\\\\."
-            }]
+            "end": "'"
         },
         "language_variables": {
             "match": "\\b(CurrPage|CurrReport|Rec|RequestOptionsPage|xRec)\\b",
