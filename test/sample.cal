@@ -2,6 +2,7 @@
 BigIntegerVar := -9223372036854775807L;
 BigIntegerVar := BigIntegerVar - 1;
 
+
 Date1 := 0D;
 Date1 := 112710D;
 MESSAGE(FORMAT(Date1));
@@ -126,3 +127,8 @@ InvalidDateErrorMessage := Text001;
 ASSERTERROR CheckDate(InvalidDate);
 IF GETLASTERRORTEXT <> InvalidDateErrorMessage THEN
   ERROR('Unexpected error: %1', GETLASTERRORTEXT);
+
+
+// STRINGS WITH BACK SLASH
+IF FilePath[STRLEN(FilePath)] <> '\' THEN
+  FilePath = FilePath + '\'

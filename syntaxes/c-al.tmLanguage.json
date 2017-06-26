@@ -24,7 +24,7 @@
     }, {
         "comment": "Datetime data type",
         "name": "constant.numeric.complex.c-al",
-        "match": "\\b(?i:([1-9]+[0-9]*|0)D)"
+        "match": "\\b(?i:([0-9]+|0)D)"
     }, {
         "comment": "BigInteger data type",
         "name": "constant.numeric.integer.big.decimal.c-al",
@@ -67,17 +67,122 @@
     }, {
         "include": "#strings"
     }, {
-        "include": "#language_variables"
+        "include": "#builtin_variables"
+    }, {
+        "include": "#dotter_names"
+    }, {
+        "include": "#builtin_functions"
     }],
     "repository": {
         "builtin_datatypes": {
             "comment": "Builtin Data Types for Dynamics NAV C/AL",
             "name": "support.type.c-al",
-            "match": "\b(Action|Automation|BigInteger|BigText|Binary|BLOB|Boolean|Char|Code|Codeunit|Date|DateFormula|DateTime|Decimal|Dialog|Duration|FieldRef|File|GUID|InStream|Integer|KeyRef|OCX|Option|OutStream|Page|Record|RecordID|RecordRef|Report|System|TableFilter|Text|Time|TransactionType|Variant|XMLport)\b"
+            "match": "\\b(Action|Automation|BigInteger|BigText|Binary|BLOB|Boolean|Char|Code|Codeunit|Date|DateFormula|DateTime|Decimal|Dialog|Duration|FieldRef|File|GUID|InStream|Integer|KeyRef|OCX|Option|OutStream|Page|Record|RecordID|RecordRef|Report|System|TableFilter|Text|Time|TransactionType|Variant|XMLport)\\b"
         },
         "builtin_functions": {
             "name": "support.function.builtin.c-al",
-            "match": "\b(Abs|Activate|Active|Addlink|Addtext|Applicationpath|ArrayLen|Ascending|Beep|Break|CalcDate|CalcField|CalcFields|CalcSum|CalcSums|Caption|ChangeCompany|CheckLicenseFile|Class|Clear|ClearAll|ClearLastError|ClearMarks|ClientType|Close|ClosingDate|CodeCoverageLog|CommandLine|Commit|CompanyName|CompressArray|Confirm|Consistent|ContextURL|ConvertStr|Copy|CopyArray|CopyFilter|CopyFilters|CopyLinks|CopyStr|CopyStream|Count|CountApprox|Create|CreateDateTime|CreateGUID|CreateInstream|CreateOutstream|CreateTempFile|CurrentClientType|CurrentDateTime|CurrentExecutionMode|CurrentKey|CurrentKeyIndex|CurrentTransactionType|Database|Date2DMY|Date2DWY|DaTi2Variant|Debugger|DecimalPlacesMax|DecimalPlacesMin|DefaultClientType|DelChr|Delete|DeleteAll|DeleteLink|DeleteLinks|DelStr|DMY2Date|Download|DownloadFromStream|DT2Date|DT2Time|Duplicate|DWY2Date|Editable|Enabled|Environ|EOS|Erase|Error|Evaluate|Exists|Export|ExportObjects|Field|FieldActive|FieldCaption|FieldCount|FieldError|FieldExist|FieldIndex|FieldName|FieldNo|FileName|FilterGroup|Find|FindFirst|FindLast|FindSet|Format|Get|GetFilter|GetFilters|GetLastErrorText|GetPosition|GetRangeMax|GetRangeMin|GetRecord|GetStamp|GetSubtext|GetTable|GetURL|GetView|GlobalLanguage|GUIAllowed|HasFilter|HasLinks|HasValue|Height|Hyperlink|Import|ImportObjects|IncStr|Init|InlineEditing|Input|Insert|InsStr|IsAction|IsAutomation|IsBinary|IsBoolean|IsChar|IsClear|IsCode|IsCodeunit|IsDate|IsDateFormula|IsDecimal|IsEmpty|IsFile|IsInstream|IsInteger|IsNullGUID|IsOption|IsOutstream|IsRecord|IsText|IsTime|IsTransactionType|KeyCount|KeyGroupDisable|KeyGroupEnable|KeyGroupEnabled|KeyIndex|Language|Len|Length|LockTable|LockTimeout|LogHeight|LogWidth|LookupMode|Lowercase|Mark|MarkedOnly|MaximizedOnOpen|MaxStrLen|Message|MinimizedOnOpen|Modify|ModifyAll|Name|Next|NormalDate|Number|ObjectType|Open|OptionCaption|OptionString|OSVersion|PadStr|PAGENO|PAPERSOURCE|Pos|Power|Preview|PrintOnlyIfDetail|QueryReplace|Quit|Random|Randomize|Read|ReadConsistency|ReadPermission|ReadText|RecordID|RecordLevelLocking|Relation|Rename|Reset|Round|RoundDateTime|Run|RunModal|SaveAsExcel|SaveAsHTML|SaveAsPDF|SaveAsXML|SaveRecord|Seek|SelectLatestVersion|SelectStr|SerialNumber|SetAutoCalcFields|SetCurrentKey|SetFilter|SetPermissionFilter|SetPosition|SetRange|SetRecFilter|SetRecord|SetSelectionFilter|SetStamp|SetTable|SetTableView|SetView|Shell|SID|Skip|Sleep|STARTSESSION|STOPSESSION|StrCheckSum|StrLen|StrMenu|StrPos|StrSubstNo|SynchronizeAllLogins|SynchronizeSingleLogin|TableCaption|TableName|TableNo|TemporaryPath|TestField|TextEncoding|TextMode|TextPos|Today|TOTALSCAUSEDBY|TransferFields|Trunc|Type|Update|UpdateControls|UpdateEditable|UpdateFontBold|UpdateForeColor|UpdateIndent|UpdateSelected|Upload|UploadIntoStream|Uppercase|UserID|Validate|Value|VariableActive|Variant2Date|Variant2Time|Visible|Width|WindowsLanguage|WordDate|Write|WriteMode|WritePermission|WriteText|XPos|Yield|YPos|Array)\b"
+            "match": "\\b(ABS|ACTIVATE|ACTIVE|ADDLINK|ADDTEXT|APPLICATIONPATH|ARRAYLEN|ASCENDING|BEEP|BREAK|CALCDATE|CALCFIELD|CALCFIELDS|CALCSUM|CALCSUMS|CAPTION|CHANGECOMPANY|CHECKLICENSEFILE|CLASS|CLEAR|CLEARALL|CLEARLASTERROR|CLEARMARKS|CLIENTTYPE|CLOSE|CLOSINGDATE|CODECOVERAGELOG|COMMANDLINE|COMMIT|COMPANYNAME|COMPRESSARRAY|CONFIRM|CONSISTENT|CONTEXTURL|CONVERTSTR|COPY|COPYARRAY|COPYFILTER|COPYFILTERS|COPYLINKS|COPYSTR|COPYSTREAM|COUNT|COUNTAPPROX|CREATE|CREATEDATETIME|CREATEGUID|CREATEINSTREAM|CREATEOUTSTREAM|CREATETEMPFILE|CURRENTCLIENTTYPE|CURRENTDATETIME|CURRENTEXECUTIONMODE|CURRENTKEY|CURRENTKEYINDEX|CURRENTTRANSACTIONTYPE|DATABASE|DATE2DMY|DATE2DWY|DATI2VARIANT|DEBUGGER|DECIMALPLACESMAX|DECIMALPLACESMIN|DEFAULTCLIENTTYPE|DELCHR|DELETE|DELETEALL|DELETELINK|DELETELINKS|DELSTR|DMY2DATE|DOWNLOAD|DOWNLOADFROMSTREAM|DT2DATE|DT2TIME|DUPLICATE|DWY2DATE|EDITABLE|ENABLED|ENVIRON|EOS|ERASE|ERROR|EVALUATE|EXISTS|EXPORT|EXPORTOBJECTS|FIELD|FIELDACTIVE|FIELDCAPTION|FIELDCOUNT|FIELDERROR|FIELDEXIST|FIELDINDEX|FIELDNAME|FIELDNO|FILENAME|FILTERGROUP|FIND|FINDFIRST|FINDLAST|FINDSET|FORMAT|GET|GETFILTER|GETFILTERS|GETLASTERRORTEXT|GETPOSITION|GETRANGEMAX|GETRANGEMIN|GETRECORD|GETSTAMP|GETSUBTEXT|GETTABLE|GETURL|GETVIEW|GLOBALLANGUAGE|GUIALLOWED|HASFILTER|HASLINKS|HASVALUE|HEIGHT|HYPERLINK|IMPORT|IMPORTOBJECTS|INCSTR|INIT|INLINEEDITING|INPUT|INSERT|INSSTR|ISACTION|ISAUTOMATION|ISBINARY|ISBOOLEAN|ISCHAR|ISCLEAR|ISCODE|ISCODEUNIT|ISDATE|ISDATEFORMULA|ISDECIMAL|ISEMPTY|ISFILE|ISINSTREAM|ISINTEGER|ISNULLGUID|ISOPTION|ISOUTSTREAM|ISRECORD|ISTEXT|ISTIME|ISTRANSACTIONTYPE|KEYCOUNT|KEYGROUPDISABLE|KEYGROUPENABLE|KEYGROUPENABLED|KEYINDEX|LANGUAGE|LEN|LENGTH|LOCKTABLE|LOCKTIMEOUT|LOGHEIGHT|LOGWIDTH|LOOKUPMODE|LOWERCASE|MARK|MARKEDONLY|MAXIMIZEDONOPEN|MAXSTRLEN|MESSAGE|MINIMIZEDONOPEN|MODIFY|MODIFYALL|NAME|NEXT|NORMALDATE|NUMBER|OBJECTTYPE|OPEN|OPTIONCAPTION|OPTIONSTRING|OSVERSION|PADSTR|PAGENO|PAPERSOURCE|POS|POWER|PREVIEW|PRINTONLYIFDETAIL|QUERYREPLACE|QUIT|RANDOM|RANDOMIZE|READ|READCONSISTENCY|READPERMISSION|READTEXT|RECORDID|RECORDLEVELLOCKING|RELATION|RENAME|RESET|ROUND|ROUNDDATETIME|RUN|RUNMODAL|SAVEASEXCEL|SAVEASHTML|SAVEASPDF|SAVEASXML|SAVERECORD|SEEK|SELECTLATESTVERSION|SELECTSTR|SERIALNUMBER|SETAUTOCALCFIELDS|SETCURRENTKEY|SETFILTER|SETPERMISSIONFILTER|SETPOSITION|SETRANGE|SETRECFILTER|SETRECORD|SETSELECTIONFILTER|SETSTAMP|SETTABLE|SETTABLEVIEW|SETVIEW|SHELL|SID|SKIP|SLEEP|STARTSESSION|STOPSESSION|STRCHECKSUM|STRLEN|STRMENU|STRPOS|STRSUBSTNO|SYNCHRONIZEALLLOGINS|SYNCHRONIZESINGLELOGIN|TABLECAPTION|TABLENAME|TABLENO|TEMPORARYPATH|TESTFIELD|TEXTENCODING|TEXTMODE|TEXTPOS|TODAY|TOTALSCAUSEDBY|TRANSFERFIELDS|TRUNC|TYPE|UPDATE|UPDATECONTROLS|UPDATEEDITABLE|UPDATEFONTBOLD|UPDATEFORECOLOR|UPDATEINDENT|UPDATESELECTED|UPLOAD|UPLOADINTOSTREAM|UPPERCASE|USERID|VALIDATE|VALUE|VARIABLEACTIVE|VARIANT2DATE|VARIANT2TIME|VISIBLE|WIDTH|WINDOWSLANGUAGE|WORDDATE|WRITE|WRITEMODE|WRITEPERMISSION|WRITETEXT|XPOS|YIELD|YPOS|ARRAY)\\b"
+        },
+        "builtin_properties": {
+            "name": "support.other.builtin.c-al",
+            "match": "\\b(ActiveControlOnOpen|AltSearchField|AssistEdit|AutoCalcField|AutoEnter|AutoFormatExpr|AutoFormatType|AutoIncrement|AutoPosition|AutoRepeat|AutoReplace|AutoSave|AutoSplitKey|AutoUpdate|BackColor|BackTransparent|BackupKey|Bitmap|BitmapList|BitmapPos|BlankNumbers|BlankZero|Border|BorderColor|BorderStyle|BorderWidth|BottomMargin|CalcFields|CalcFormula|CallFieldValidate|Cancel|Caption|CaptionBar|CaptionClass|CaptionML|CardPageID|CharAllowed|ChartPartID|ClearOnLookup|ClosingDates|Clustered|Compressed|ContainerType|ControlAddin|ControlType|DataCaptionExpr|DataCaptionFields|DataItemIndent|DataItemLink|DataItemLinkReference|DataItemSeparator|DataItemTable|DataItemTableView|DataLength|DataPerCompany|DateFormula|DecimalPlaces|Default|DefaultFieldsValidation|DelayedInsert|DeleteAllowed|Description|DeviceFontName|Dimensions|Direction|Divisor|DrillDown|DrillDownPageID|DropDown|Editable|Ellipsis|Enabled|EnabledIfError|EnabledIfInsertion|EnabledIfSelection|Encoding|ExtendedDataType|Field No|FieldClass|FieldEndDelimiter|FieldSeparator|FieldStartDelimiter|FieldValidate|FileFormat|FileName|Focusable|FocusOnClick|FontBold|FontItalic|FontName|FontSize|FontStrikethru|FontUnderline|ForeColor|Format|FreezeColumnID|FunctionType|GroupTotalFields|GroupType|HandlerFunctions|HeadingHeight|Height|HideValue|HorzAlign|HorzGlue|HorzGrid|ID|Image|Import|Importance|IncludeInDataSet|InColumn|InColumnHeading|Indent|Indentation|IndentationColumnName|IndentationControls|InFooterBar|InFrame|InitValue|InlineEditing|InMatrix|InMatrixHeading|InPage|InsertAllowed|InstructionalTextML|InvalidActionAppearance|KeepWithNext|Key|KeyGroups|LeaderDots|LeftMargin|LinkedInTransaction|LinkedObject|LinkFields|LinksAllowed|LinkTable|LinkTableForceInsert|LogHeight|LogWidth|Lookup|LookupMode|LookupPageID|MaintainSIFTIndex|MaintainSQLIndex|MatrixColumnWidth|MatrixSourceTable|Maximizable|MaximizedOnOpen|MaxIteration|MaxLength|MaxOccurs|MaxValue|MenuItemType|MenuLevel|Minimizable|MinimizedOnOpen|MinOccurs|MinValue|ModifyAllowed|MultiLine|MultipleNewLines|Name|NamespacePrefix|Namespaces|NewPagePerGroup|NextControl|NodeName|NodeType|NotBlank|Numeric|Occurrence|OptionCaption|OptionCaptionML|OptionString|OptionValue|Orientation|PadChar|PageNames|PageNamesML|PagePartID|PageType|PaperSize|PaperSourceDefaultPage|PaperSourceFirstPage|PaperSourceLastPage|PaperSourceOtherPages|ParentControl|PartType|PasswordText|PasteIsValid|Percentage|PermanentAssist|Permissions|PlaceInBottom|PopulateAllFields|PrintOnEveryPage|PrintOnlyIfDetail|ProcessingOnly|Promoted|PromotedCategory|PromotedIsBig|ProviderID|PushAction|RecordSeparator|ReqFilterFields|ReqFilterHeading|ReqFilterHeadingML|RightMargin|RowHeight|RunCommand|RunObject|RunPageLink|RunPageOnRec|RunPageView|SaveColumnWidths|SaveControlInfo|SavePosAndSize|SaveValues|SectionHeight|SectionWidth|ShapeStyle|ShortCutKey|ShowAsTree|ShowCaption|ShowPrintStatus|ShowStatus|SignDisplacement|SingleInstance|Sizable|SourceExpr|SourceField|SourceTable|SourceTablePlacement|SourceTableRecord|SourceTableTemporary|SourceTableView|SourceType|SQL Data Type|SQLIndex|StartPos|Style|StyleExpr|SubPageLink|SubPageView|SubType|SumIndexFields|SystemPartID|TableBoxID|TableIDExpr|TableNo|TableRelation|Temporary|TestTableRelation|TextType|TimerInterval|Title|ToolTip|ToolTipML|TopLineOnly|TopMargin|TotalFields|TransactionType|UpdateOnAction|UpdateOnActivate|UseRequestPage|UseSystemPrinter|ValidateTableRelation|ValuesAllowed|VariableName|VertAlign|VertGlue|VertGrid|Visible|Width|WithEvents|XMLVersionNo|XPos|YPos)\\b"
+        },
+        "builtin_objects": {
+            "name": "support.type.object.c-al",
+            "match": "\\b(Query)\\b"
+        },
+        "builtin_triggers": {
+            "name": "support.type.object.c-al",
+            "match": "\\b(OnAction|OnActivate|OnAfterAssignField|OnAfterAssignVariable|OnAfterExportRecord|OnAfterFormatField|OnAfterGetField|OnAfterGetRecord|OnAfterImportRecord|OnAfterInitRecord|OnAfterInput|OnAfterInsertRecord|OnAfterModifyRecord|OnAfterTestRun|OnAfterValidate|OnAssistEdit|OnBeforeEvaluateField|OnBeforeExportRecord|OnBeforeImportRecord|OnBeforeInput|OnBeforeInsertRecord|OnBeforeModifyRecord|OnBeforePassField|OnBeforePassVariable|OnBeforePutRecord|OnBeforeTestRun|OnClosePage|OnControlAddin|OnDeactivate|OnDelete|OnDeleteRecord|OnDrillDown|OnFindRecord|OnFormat|OnInit|OnInitReport|OnInitXMLport|OnInputChange|OnInsert|OnInsertRecord|OnLookup|OnModify|OnModifyRecord|OnNewRecord|OnNextRecord|OnOpenPage|OnPostDataItem|OnPostReport|OnPostSection|OnPostXMLport|OnPreDataItem|OnPreReport|OnPreSection|OnPreXMLItem|OnPreXMLport|OnPush|OnQueryClosePage|OnQueryClosePage|OnRename|OnTimer|OnValidate)\\b"
+        },
+        "builtin_variables": {
+            "name": "variable.language.c-al",
+            "match": "\\b(CurrPage|CurrReport|Rec|RequestOptionsPage|xRec)\\b"
+        },
+        "constant_placeholder": {
+            "match": "(?i:(%(\\([a-z_]+\\))?#?0?\\-?[ ]?\\+?([0-9]*|\\*)(\\.([0-9]*|\\*))?[hL]?[a-z%])|(\\{([!\\[\\].:\\w ]+)?\\}))",
+            "name": "constant.other.placeholder.c-al"
+        },
+        "dotted_name": {
+            "begin": "(?=[A-Za-z_][A-Za-z0-9_]*(?:\\.[A-Za-z_][A-Za-z0-9_]*)*)",
+            "end": "(?![A-Za-z0-9_\\.])",
+            "patterns": [{
+                "begin": "(\\.)(?=[A-Za-z_][A-Za-z0-9_]*)",
+                "end": "(?![A-Za-z0-9_])",
+                "patterns": [{
+                    "include": "#builtin_functions"
+                }, {
+                    "include": "#builtin_properties"
+                }, {
+                    "include": "#builtin_trigers"
+                }, {
+                    "include": "#generic_names"
+                }]
+            }, {
+                "begin": "(?<\\.)(?=[A-Za-z_][A-Za-z0-9_]*)",
+                "end": "(?![A-Za-z0-9_])",
+                "patterns": [{
+                    "include": "#builtin_functions"
+                }, {
+                    "include": "#builtin_properties"
+                }, {
+                    "include": "#builtin_trigers"
+                }, {
+                    "include": "#generic_names"
+                }]
+            }]
+        },
+        "escaped_char": {
+            "captures": {
+                "1": {
+                    "name": "constant.character.escape.linefeed.c-al"
+                },
+                "2": {
+                    "name": "constant.character.escape.return.c-al"
+                },
+                "3": {
+                    "name": "constant.character.escape.tab.c-al"
+                },
+                "4": {
+                    "name": "constant.character.escape.vertical-tab.c-al"
+                },
+                "5": {
+                    "name": "constant.character.escape.octal.c-al"
+                },
+                "6": {
+                    "name": "constant.character.escape.newline.c-al"
+                },
+                "7": {
+                    "name": "constant.character.escape.backlash.c-al"
+                },
+                "8": {
+                    "name": "constant.character.escape.double-quote.c-al"
+                },
+                "9": {
+                    "name": "constant.character.escape.single-quote.c-al"
+                },
+                "10": {
+                    "name": "constant.character.escape.bell.c-al"
+                },
+                "11": {
+                    "name": "constant.character.escape.backspace.c-al"
+                },
+                "12": {
+                    "name": "constant.character.escape.formfeed.c-al"
+                }
+            },
+            "match": "(\\x[0-9A-F]{2})|(\\[0-7]{3})|(\\n)|(\\)|(\") | (\\')|(\\a)|(\\b)|(\\f)|(\\n)|(\\r)|(\\t)|(\\v)"
+        },
+        "function_name": {
+            "patterns": [{
+                "include": "#builtin_functions"
+            }, {
+                "include": "#builtin_properties"
+            }, {
+                "include": "#builtin_types"
+            }, {
+                "include": "#generic_names"
+            }]
         },
         "generic_names": {
             "match": "[A-Za-z_][A-Za-z0-9_]*"
@@ -90,10 +195,6 @@
                 "name": "constant.character.escape.c-al",
                 "match": "\\\\."
             }]
-        },
-        "language_variables": {
-            "match": "\\b(CurrPage|CurrReport|Rec|RequestOptionsPage|xRec)\\b",
-            "name": "variable.language.c-al"
         }
     },
     "scopeName": "source.c-al"
