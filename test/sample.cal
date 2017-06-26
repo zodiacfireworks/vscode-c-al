@@ -65,7 +65,7 @@ FOR I := 5 DOWNTO 1 DO
 
 
 // FOREACH-IN-DO
-strarray := Dir.GetFileSystemEntries('C:\\myfiles\\');
+strarray := Dir.GetFileSystemEntries('C:\myfiles\');
 FOREACH txt IN strarray DO
   BEGIN
     MESSAGE(txt);

@@ -190,11 +190,17 @@
         "strings": {
             "name": "string.quoted.single.c-al",
             "begin": "'",
-            "end": "'",
+            "end": "'"
+            /* TODO: Verifiy this definition properly
             "patterns": [{
                 "name": "constant.character.escape.c-al",
-                "match": "\\\\."
+                "match": "\\\\[^']"
             }]
+            */
+        },
+        "language_variables": {
+            "match": "\\b(CurrPage|CurrReport|Rec|RequestOptionsPage|xRec)\\b",
+            "name": "variable.language.c-al"
         }
     },
     "scopeName": "source.c-al"
