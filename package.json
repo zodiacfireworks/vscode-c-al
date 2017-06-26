@@ -2,7 +2,7 @@
     "name": "vscode-c-al",
     "displayName": "Dynamics NAV C/AL",
     "description": "Dynamics NAV C/AL programming language support for Visual Studio Code",
-    "version": "0.0.9",
+    "version": "0.0.10",
     "publisher": "zodiacfireworks",
     "keywords": [
         "Microsoft Dynamics",

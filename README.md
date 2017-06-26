@@ -23,6 +23,10 @@ For now there aren't any requeriments...
 
 ## Release Notes
 
+### 0.0.10
+- Corrections in `string.quoted.single.c-al` by [@codeunitone](https://github.com/codeunitone)
+- Minor updates to builtin functions and datatypes patterns
+
 ### 0.0.9
 - Corrections in support for operators
 
