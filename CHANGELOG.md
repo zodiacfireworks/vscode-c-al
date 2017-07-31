@@ -1,5 +1,9 @@
 # Change Log
 
+### 0.0.11
+- Fix issue [#4](https://github.com/zodiacfireworks/vscode-c-al/issues/4)
+- Added more sample files
+
 ### 0.0.10
 - Corrections in `string.quoted.single.c-al` by [@codeunitone](https://github.com/codeunitone)
 - Minor updates to builtin functions and datatypes patterns
