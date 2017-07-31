@@ -3,76 +3,97 @@
     "name": "C/AL",
     "foldingStartMarker": "(IF|THEN|ELSE|BEGIN|REPEAT|FOR|FOREACH|WITH|DO|CASE|\\{|\\(|\\s*$",
     "foldingStopMarker": "^\\s*((\\}|\\)|ELSE|UNTIL\\s*\\.*)\\s*$|END\\b|\\n)",
-    "patterns": [{
-        "begin": "(^[ \\t]+)?(?=//)",
-        "beginCaptures": {
-            "1": {
-                "name": "punctuation.whitespace.comment.leading.c-al"
-            }
-        },
-        "end": "(?!\\G)",
-        "patterns": [{
-            "begin": "//",
+    "patterns": [
+        {
+            "begin": "(^[ \\t]+)?(?=//)",
             "beginCaptures": {
                 "1": {
-                    "name": "punctuation.definition.comment.c-al"
+                    "name": "punctuation.whitespace.comment.leading.c-al"
                 }
             },
-            "end": "\\n",
-            "name": "comment.line.c-al"
-        }]
-    }, {
-        "comment": "Datetime data type",
-        "name": "constant.numeric.complex.c-al",
-        "match": "\\b(?i:([0-9]+|0)D)"
-    }, {
-        "comment": "BigInteger data type",
-        "name": "constant.numeric.integer.big.decimal.c-al",
-        "match": "\\b(?i:([1-9]+[0-9]*|0)L)"
-    }, {
-        "comment": "Decimal data type",
-        "name": "constant.numeric.float.c-al",
-        "match": "\\b(?i:(\\d+\\.\\d*))(?=[^a-zA-Z_])"
-    }, {
-        "comment": "Integer data type",
-        "name": "constant.numeric.integer.decimal.c-al",
-        "match": "\\b([1-9]+[0-9]*|0)"
-    }, {
-        "comment": "keywords that delimit flow blocks or alter flow from within a block",
-        "name": "keyword.control.flow.c-al",
-        "match": "\\b(AssertError|Begin|Case|Do|DownTo|Else|End|Event|Exit|False|For|ForEach|If|Local|Of|Repeat|Then|To|True|Until|Var|While|With|ASSERTERROR|BEGIN|CASE|DO|DOWNTO|ELSE|END|EVENT|EXIT|FALSE|FOR|FOREACH|IF|LOCAL|OF|REPEAT|THEN|TO|TRUE|UNTIL|VAR|WHILE|WITH)\\b"
-    }, {
-        "comment": "keyword operators that evaluate to True or False",
-        "name": "keyword.operator.logical.c-al",
-        "match": "\\b(AND|IN|NOT|OR|XOR)\\b"
-    }, {
-        "comment": "keywords that haven't fit into other groups (yet).",
-        "name": "keyword.other.c-al",
-        "match": "\\b(DIV|MOD)\\b"
-    }, {
-        "match": "<|>|<>|\\=|<\\=|>\\=",
-        "name": "keyword.operator.comparison.c-al"
-    }, {
-        "match": "\\+|\\-|\\*|/",
-        "name": "keyword.operator.arithmetic.c-al"
-    }, {
-        "match": "\\:\\=",
-        "name": "keyword.operator.assignment.c-al"
-    }, {
-        "begin": "(\\()",
-        "end": "(\\))",
-        "patterns": [{
-            "include": "$self"
-        }]
-    }, {
-        "include": "#strings"
-    }, {
-        "include": "#builtin_variables"
-    }, {
-        "include": "#dotter_names"
-    }, {
-        "include": "#builtin_functions"
-    }],
+            "end": "(?!\\G)",
+            "patterns": [
+                {
+                    "begin": "//",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "punctuation.definition.comment.c-al"
+                        }
+                    },
+                    "end": "\\n",
+                    "name": "comment.line.c-al"
+                }
+            ]
+        },
+        {
+            "comment": "Datetime data type",
+            "name": "constant.numeric.complex.c-al",
+            "match": "\\b(?i:([0-9]+|0)D)"
+        },
+        {
+            "comment": "BigInteger data type",
+            "name": "constant.numeric.integer.big.decimal.c-al",
+            "match": "\\b(?i:([1-9]+[0-9]*|0)L)"
+        },
+        {
+            "comment": "Decimal data type",
+            "name": "constant.numeric.float.c-al",
+            "match": "\\b(?i:(\\d+\\.\\d*))(?=[^a-zA-Z_])"
+        },
+        {
+            "comment": "Integer data type",
+            "name": "constant.numeric.integer.decimal.c-al",
+            "match": "\\b([1-9]+[0-9]*|0)"
+        },
+        {
+            "comment": "keywords that delimit flow blocks or alter flow from within a block",
+            "name": "keyword.control.flow.c-al",
+            "match": "\\b(AssertError|Begin|Case|Do|DownTo|Else|End|Event|Exit|False|For|ForEach|If|Local|Of|Repeat|Then|To|True|Until|Var|While|With|ASSERTERROR|BEGIN|CASE|DO|DOWNTO|ELSE|END|EVENT|EXIT|FALSE|FOR|FOREACH|IF|LOCAL|OF|REPEAT|THEN|TO|TRUE|UNTIL|VAR|WHILE|WITH)\\b"
+        },
+        {
+            "comment": "keyword operators that evaluate to True or False",
+            "name": "keyword.operator.logical.c-al",
+            "match": "\\b(AND|IN|NOT|OR|XOR)\\b"
+        },
+        {
+            "comment": "keywords that haven't fit into other groups (yet).",
+            "name": "keyword.other.c-al",
+            "match": "\\b(DIV|MOD)\\b"
+        },
+        {
+            "match": "<|>|<>|\\=|<\\=|>\\=",
+            "name": "keyword.operator.comparison.c-al"
+        },
+        {
+            "match": "\\+|\\-|\\*|/",
+            "name": "keyword.operator.arithmetic.c-al"
+        },
+        {
+            "match": "\\:\\=",
+            "name": "keyword.operator.assignment.c-al"
+        },
+        {
+            "begin": "(\\()",
+            "end": "(\\))",
+            "patterns": [
+                {
+                    "include": "$self"
+                }
+            ]
+        },
+        {
+            "include": "#strings"
+        },
+        {
+            "include": "#builtin_variables"
+        },
+        {
+            "include": "#dotted_names"
+        },
+        {
+            "include": "#builtin_functions"
+        }
+    ],
     "repository": {
         "builtin_datatypes": {
             "comment": "Builtin Data Types for Dynamics NAV C/AL",
@@ -190,13 +211,11 @@
         "strings": {
             "name": "string.quoted.single.c-al",
             "begin": "'",
-            "end": "'"
-            /* TODO: Verifiy this definition properly
+            "end": "'",
             "patterns": [{
                 "name": "constant.character.escape.c-al",
                 "match": "\\\\[^']"
             }]
-            */
         },
         "language_variables": {
             "match": "\\b(CurrPage|CurrReport|Rec|RequestOptionsPage|xRec)\\b",

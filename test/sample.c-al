@@ -1,0 +1,35 @@
+OBJECT Codeunit 50000 EDIFACT Order
+{
+  OBJECT-PROPERTIES
+  {
+    Date=27/07/17;
+    Time=20:11:44;
+    Modified=Yes;
+    Version List=Test;
+  }
+  PROPERTIES
+  {
+    OnRun=BEGIN
+    END;
+  }
+  CODE
+  {
+    LOCAL PROCEDURE formatFile@1000000003(VAR buffer@1000000000 : Text);
+    VAR
+      CR@1000000001 : Char;
+      LF@1000000002 : Char;
+    BEGIN
+      CR := 13;
+      LF := 10;
+
+      buffer := DELCHR(buffer, '=', FORMAT(CR));
+      buffer := DELCHR(buffer, '=', FORMAT(LF));
+    END;
+
+    BEGIN
+    {
+        // Test
+    }
+    END.
+  }
+}
