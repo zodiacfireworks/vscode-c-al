@@ -26,6 +26,16 @@
             ]
         },
         {
+            "begin": "{",
+            "beginCaptures": {
+                "1": {
+                    "name": "punctuation.definition.block.comment.c-al"
+                }
+            },
+            "end": "}",
+            "name": "comment.block.c-al"
+        },
+        {
             "comment": "Datetime data type",
             "name": "constant.numeric.complex.c-al",
             "match": "\\b(?i:([0-9]+|0)D)"
